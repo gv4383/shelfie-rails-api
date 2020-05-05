@@ -18,6 +18,16 @@ module Api
       end
     end
 
+    def destroy
+      product = Product.find(params[:id])
+
+      if product.destroy
+        head :no_content
+      else
+        render json: { error: product.errors.messages }, status: 404
+      end
+    end
+
     private
 
     def product_params
