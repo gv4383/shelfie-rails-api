@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :inventory, only: %[index]
-    resources :product, only: %[show create update destroy]
+    resources :inventory, only: %i[index]
+    resources :product, only: %i[show create update destroy]
   end
 end
